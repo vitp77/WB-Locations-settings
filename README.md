@@ -2,4 +2,8 @@
 Как попробовать:
 1. Перенести папку 'wb-location-settings' со всеми файлами в '/mnt/data/etc.
 2. Выполнить скрипт начальной инициализации '/mnt/data/etc/wb-location-settings/initial-setup.sh'.
+
+   
 После этого можно идти в настройки, выбирать пункт 'места автоматизации' и создавать списки мест.
+![изображение](./doc/AllSettings.png)
+![изображение](./doc/LocationSettings.png)
