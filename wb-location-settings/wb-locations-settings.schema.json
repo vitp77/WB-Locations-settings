@@ -1,0 +1,84 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "title": "Locations settings",
+    "description": "Configuration of Locations settings",
+    "options": {
+        "disable_edit_json": true,
+        "disable_properties": true,
+        "disable_collapse": true
+    },
+    "configFile": {
+        "fromJSON": [
+            "/mnt/data/etc/wb-location-settings/wb-locations-settings-util.py",
+            "--LocationsSettingsFromJSON"
+        ],
+        "path": "/mnt/data/etc/wb-location-settings/wb-locations-settings.conf",
+        "service": "wb-rules"
+    },
+    "properties": {
+		"location": {
+			"$ref": "#/definitions/locationSettings"
+		}
+		
+    },
+    "definitions": {
+        "locationSettings": {
+            "type": "object",
+            "_format": "grid",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "options": {
+                        "hidden": true
+                    }
+                },
+                "name": {
+                    "type": "string",
+                    "title": "Name",
+                    "propertyOrder": 10,
+                    "options": {
+                        "grid_columns": 6,
+                        "wb": {
+                            "disable_title": true
+                        }
+                    }
+                },
+                "locations": {
+                    "type": "array",
+                    "title": "Locations",
+                    "_format": "tabs",
+                    "propertyOrder": 100,
+                    "items": {
+                        "$ref": "#/definitions/locations"
+                    },
+                    "options": {
+                        "disable_collapse": true,
+                        "disable_array_delete_last_row": true,
+                        "disable_array_delete_all_rows": true
+                    }
+                }
+            },
+            "options": {
+                "disable_edit_json": true,
+                "wb": {
+                    "disable_title": true
+                }
+            }
+        },
+        "locations": {
+            "headerTemplate": "{{self.name}}",
+            "allOf": [
+                {
+                    "$ref": "#/definitions/locationSettings"
+                }
+            ],
+            "options": {
+                "disable_edit_json": true,
+                "wb": {
+                    "disable_title": true
+                }
+            }
+        }
+    }
+}
