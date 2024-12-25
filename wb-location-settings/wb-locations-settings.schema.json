@@ -80,5 +80,13 @@
                 }
             }
         }
-    }
+    },
+    "translations": {
+        "ru": {
+			"Locations settings": "Настройки мест автоматизации",
+			"Configuration of Locations settings": "Списки объектов автоматизации",
+			"Name": "Наименование",
+			"Locations": "Автоматизируемые объекты"
+		}
+	}
 }
